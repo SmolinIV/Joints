@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent (typeof(HingeJoint))]
-public class Pendulum : MonoBehaviour
+
+public class Seat : MonoBehaviour
 {
     private Rigidbody _rigidbody;
 
@@ -14,7 +12,7 @@ public class Pendulum : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void PushSeat(float force)
+    public void Push(float force)
     {
         Vector3 direction = _rigidbody.velocity.z > 0 ? transform.forward : -transform.forward;
 

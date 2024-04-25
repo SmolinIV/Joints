@@ -1,17 +1,13 @@
-using System;
 using UnityEngine;
 
 public class Swing : MonoBehaviour
 {
-    [SerializeField] private Pendulum _pendulum;
+    [SerializeField] private Seat _seat;
     [SerializeField] private float _swinningForce = 5f;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
-            SwingSeat();
+            _seat.Push(_swinningForce);
     }
-
-    public void SwingSeat() =>
-        _pendulum.PushSeat(_swinningForce);
 }

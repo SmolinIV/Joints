@@ -38,9 +38,9 @@ public class Catapult : MonoBehaviour
 
     private void Attack()
     {
-        float degreesEpsilon = 2f;
+        float epsilon = 5f;
 
-        if (transform.eulerAngles.x - _defaultEulerAngleX > degreesEpsilon)
+        if (Mathf.Abs(transform.eulerAngles.x - _defaultEulerAngleX) > epsilon)
             return;
 
         if (_cannonBallsPool.TryGetCannonBall(out CannonBall cannonBall))

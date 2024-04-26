@@ -9,8 +9,7 @@ public class Thrower : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
-    private float _minSpringForce = 0;
-
+    private float _minSpringForce = 0f;
     private float _minDamperForce = 0f;
 
     private void Awake()
@@ -22,7 +21,6 @@ public class Thrower : MonoBehaviour
     {
         _springJoint.spring = _minSpringForce;
         _springJoint.damper = _minDamperForce;
-        _rigidbody.AddForce(-transform.forward, ForceMode.Impulse);
     }
 
     internal void ThrowBall()
